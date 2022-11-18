@@ -1,5 +1,7 @@
 {{define "dbCodeTemplatePgx"}}
 
+var ERROR_NO_ROWS = pgx.ErrNoRows
+
 type DBTX interface {
 	Exec(context.Context, string, ...interface{}) (pgconn.CommandTag, error)
 	Query(context.Context, string, ...interface{}) (pgx.Rows, error)
